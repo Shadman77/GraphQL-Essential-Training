@@ -1,6 +1,7 @@
 import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import schema from "./schema";
+import resolvers from "./resolvers";
 
 const app = express();
 const port = 5000;
@@ -10,19 +11,7 @@ app.get("/", (req, res) => {
 });
 
 // GraphQL Initial Data
-const root = {
-  hello: () => "Hello GraphQL",
-  product: () => {
-    return {
-      id: 123,
-      name: "Some Product",
-      description: "Some description about the product",
-      price: 34.99,
-      soldout: false,
-      stores: [{ store: "Store 1" }, { store: "Store 2" }],
-    };
-  },
-};
+const root = resolvers;
 
 app.use(
   "/graphql",
