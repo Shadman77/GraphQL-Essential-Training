@@ -1,14 +1,24 @@
-mutation {
+# Mutation Create
+mutation{
   createProduct(input: {
-    name:"Test Product",
-    description : "Test Description",
-    price: 37.37,
+    name:"test product",
+    description: "test description",
+    price:77.7,
     soldout:false,
-    stores:[
-     {store: "store1"},
-      {store: "store2"}
-    ]
+    stores: [
+      {
+        store:"store1"
+      },
+      {
+        store: "store2"
+      }
+    ],
+    inventory: 77,
+    soldoutEnum:ONSALE
   }){
-    name, price
+    name,
+    id,
+    inventory,
+    soldoutEnum
   }
 }
