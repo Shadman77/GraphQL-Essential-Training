@@ -53,6 +53,10 @@ export const resolvers = {
       });
     });
   },
+
+  getAllProducts: () => {
+    return Widgets.find({});
+  },
 };
 
 export default resolvers;
