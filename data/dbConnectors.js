@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
-  "mongodb+srv://shadman_saif:6oWJYdJqr0l0ILPf@data.vcbev.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb+srv://shadman_saif:6oWJYdJqr0l0ILPf@data.vcbev.mongodb.net/graphql?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
   }
@@ -20,6 +20,9 @@ const widgetSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
+  },
+  isActive: {
+    type: Boolean,
   },
   soldout: {
     type: String,
